@@ -1,2 +1,2 @@
 # starlink-openapi
-Sadness
+Sadness, Intellectual Bankruptcy
