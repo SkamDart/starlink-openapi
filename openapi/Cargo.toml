@@ -1,0 +1,17 @@
+[package]
+name = "openapi"
+version = "1.0.0"
+authors = ["OpenAPI Generator team and contributors"]
+description = "<h3>Description</h3>API to manage accounts and user terminals. This page is deprecated, please use the new documentation site: <a href='https://starlink.readme.io/'>https://starlink.readme.io/</a><h3>Authentication - OIDC</h3><p>To authenticate with this API using OIDC, <a target='_blank' href='/api/auth/.well-known/openid-configuration'>Well Known URL</a> and attach the result to your requests with the <strong>Authorize</strong> button below.</p>"
+# Override this license by providing a License Object in the OpenAPI.
+license = "Unlicense"
+edition = "2021"
+
+[dependencies]
+serde = { version = "^1.0", features = ["derive"] }
+serde_with = { version = "^3.8", default-features = false, features = ["base64", "std", "macros"] }
+serde_json = "^1.0"
+serde_repr = "^0.1"
+url = "^2.5"
+uuid = { version = "^1.8", features = ["serde", "v4"] }
+reqwest = { version = "^0.12", default-features = false, features = ["json", "multipart"] }
