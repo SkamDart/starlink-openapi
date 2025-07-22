@@ -2,45 +2,6 @@
 default:
     @just --list
 
-# Build the project
-build:
-    cargo build
-
-# Build in release mode
-build-release:
-    cargo build --release
-
-# Run the project
-run:
-    cargo run
-
-# Run tests
-test:
-    cargo test
-
-# Run the basic usage example
-example:
-    cargo run --example basic_usage
-
-# Format code
-fmt:
-    cargo fmt
-
-# Check formatting
-fmt-check:
-    cargo fmt -- --check
-
-# Run clippy
-clippy:
-    cargo clippy -- -D warnings
-
-# Clean build artifacts
-clean:
-    cargo clean
-
-# Check project (format, clippy, test)
-check: fmt-check clippy test
-
 # Generate documentation
 doc:
     cargo doc --open
@@ -53,3 +14,5 @@ download-protobuf-spec:
 download-openapi-spec:
     curl -L https://web-api.starlink.com/enterprise/swagger/v1/swagger.json -o vendor/swagger.json
 
+generate-openapi lang="rust":
+    openapi-generator-cli generate -i ./vendor/swagger.json  -g {{lang}} -o ./openapi
